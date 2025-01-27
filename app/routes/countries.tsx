@@ -13,7 +13,8 @@ export default function Countries({ loaderData }: Route.ComponentProps) {
   const [region, setRegion] = useState<string>("");
 
   const filteredData = loaderData.filter((country: any) => {
-    const matchesRegion = !region || country.region.toLowerCase() === region.toLocaleLowerCase();
+    const matchesRegion =
+      !region || country.region.toLowerCase() === region.toLocaleLowerCase();
     const matchesSearch =
       !search ||
       country.name.common.toLowerCase().includes(search.toLowerCase());
@@ -31,10 +32,11 @@ export default function Countries({ loaderData }: Route.ComponentProps) {
           onChange={(event) => setSearch(event.target.value)}
           className="border border-gray-300 rounded px-3 py-2 w-full sm:w-1/2 focus:outline-none focus:border-indigo-500"
         />
+
         <select
           value={region}
           onChange={(event) => setRegion(event.target.value)}
-          className="border border-gray-300 rounded px-3 py-2 w-full sm:w-1/2 focus:outline-none focus:border-indigo-500"
+          className="border border-gray-300 rounded px-3 py-2 w-full sm:w-1/2 focus:outline-none focus:border-indigo-500 cursor-pointer"
         >
           <option value="">All</option>
           <option value="Africa">Africa</option>
@@ -44,11 +46,26 @@ export default function Countries({ loaderData }: Route.ComponentProps) {
           <option value="Europe">Europe</option>
           <option value="Oceania">Oceania</option>
         </select>
+        <button
+          className="rounded-md border border-transparent py-2 px-4 text-center text-sm transition-all text-slate-600 hover:bg-indigo-300 cursor-pointer"
+          type="button"
+          onClick={()=>{
+            setSearch("");
+            setRegion("");
+          }}
+        >
+          Clear
+        </button>
       </div>
+
       {filteredData.length === 0 ? (
-        <div className="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 max-w-150" role="alert">
-        <span className="font-medium">Warning alert!</span> No Countries found. Change region and try again.
-      </div>
+        <div
+          className="p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 max-w-150"
+          role="alert"
+        >
+          <span className="font-medium">Warning alert!</span> No Countries
+          found. Change region and try again.
+        </div>
       ) : (
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredData.map((country: any) => (
