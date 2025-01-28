@@ -13,7 +13,7 @@ export default function About() {
           >
             restcountries.com
           </a>
-          to query information about countries around the world by name and
+           to query information about countries around the world by name and
           region.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mb-4">
