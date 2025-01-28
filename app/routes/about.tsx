@@ -2,9 +2,11 @@ export default function About() {
   return (
     <div className="py-16 bg-white">
       <div className="container mx-auto px-4 max-w-4xl">
-        <h1 className="text-4xl font-extrabold text-gray-900 mb-6 text-center">About Country explorer</h1>
+        <h1 className="text-4xl font-extrabold text-gray-900 mb-6 text-center">
+          About Country explorer
+        </h1>
         <p className="text-xl text-gray-700 leading-relaxed mb-4">
-          This project utalizes the REST API provided by 
+          This project utalizes the REST API provided by
           <a
             className="underline text-indigo-400 font-semibold"
             href="https://restcountries.com/"
@@ -13,7 +15,7 @@ export default function About() {
           >
             restcountries.com
           </a>
-           to query information about countries around the world by name and
+           {" "}to query information about countries around the world by name and
           region.
         </p>
         <p className="text-lg text-gray-700 leading-relaxed mb-4">
