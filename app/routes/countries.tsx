@@ -54,7 +54,7 @@ export default function Countries({ loaderData }: Route.ComponentProps) {
             setRegion("");
           }}
         >
-          Clear
+          Reset
         </button>
       </div>
 
