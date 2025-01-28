@@ -25,7 +25,7 @@ export default function Country({ loaderData }: Route.ComponentProps) {
         <h2 className="text-3xl font-bold text-gray-900">{country.name}</h2>
         <div className="space-y-2 text-gray-700">
           <p>
-            <span className="font-semibold">Official Name:</span>
+            <span className="font-semibold">Official Name: </span>
             {country.officialName}
           </p>
           <p>
@@ -36,11 +36,11 @@ export default function Country({ loaderData }: Route.ComponentProps) {
           </p>
           <p>
             <span className="font-semibold">Subregion:</span>
-            {country.subregion}
+            {" "}{country.subregion}
           </p>
           <p>
             <span className="font-semibold">Population:</span>
-            {country.population.toLocaleString()}
+            {" "}{country.population.toLocaleString()}
           </p>
         </div>
       </div>
